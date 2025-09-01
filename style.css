@@ -1,55 +1,182 @@
 body {
-text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
+
+.report-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 700px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.student-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.input-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-section label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.input-section input {
+  padding: 6px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+button {
+  background: #4cafef;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #3899db;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
 th {
-background: #007bff;
-color: white;
-font-size: 15px;
-letter-spacing: 0.5px;
+  background: #4cafef;
+  color: white;
 }
+
 tr:nth-child(even) {
-background: #f9f9f9;
+  background: #f9f9f9;
 }
-tr:hover td {
-background: #eef5ff;
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
 }
-.overall {
-font-weight: bold;
-background: #e9ecef;
-font-size: 17px;
+
+
+/* ensure inputs can wrap so buttons don't get pushed out */
+.input-section,
+.inputs {
+  display: flex;
+  flex-wrap: wrap;       /* allow items to move to next line */
+  gap: 12px;             /* spacing between fields */
+  align-items: center;
 }
-.progress-bar {
-margin: 25px auto;
-width: 80%;
-height: 25px;
-background: #e0e0e0;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+
+/* make each input label behave nicely when wrapping */
+.input-section label,
+.inputs label {
+  flex: 0 1 auto;        /* allow label+input blocks to shrink/wrap */
+  min-width: 140px;      /* keep inputs usable; tweak as needed */
 }
-.progress-fill {
-height: 100%;
-width: 0;
-background: linear-gradient(90deg, #007bff, #00c6ff);
-text-align: center;
-color: white;
-font-weight: bold;
-line-height: 25px;
-transition: width 1s ease;
-}
-.signature {
-text-align: center;
-margin-top: 50px;
-}
-.signature div {
-margin-top: 60px;
-border-top: 1px solid #000;
-width: 220px;
-margin-left: auto;
-margin-right: auto;
-}
+
+/* button container — keep buttons centered and wrap if needed */
 .btn-group {
-display: flex;
-justify-content: center;
-margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* desktop: buttons keep natural size */
+.btn-group button {
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+/* small screens: make buttons full width so they never overflow */
+@media (max-width: 480px) {
+  .input-section label,
+  .inputs label {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .btn-group button {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+
+/* ===== Base styles remain same ===== */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .report-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .student-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .input-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-section label {
+    width: 100%;
+  }
+
+  table, th, td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .student-details p {
+    font-size: 14px;
+  }
+
+  table, th, td {
+    font-size: 12px;
+  }
 }

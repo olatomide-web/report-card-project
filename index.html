@@ -1,77 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Checker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Report Card</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body><h2>Student Report Card</h2>
-<div class="student-info">
-<div>
-<label>Name:</label>
-<input type="text" id="studentName">
-</div>
-<div>
-<label>Class:</label>
-<input type="text" id="studentClass">
-</div>
-<div>
-<label>Term:</label>
-<input type="text" id="studentTerm">
-</div>
-<div>
-<label>Date:</label>
-<input type="date" id="studentDate">
-</div>
-</div>
+<body>
+  <div class="report-card">
+    <header>
+      <h1>Student Report Card</h1>
+      <div class="student-details">
+        <p><strong>Name:</strong> <span id="studentName">________</span></p>
+        <p><strong>Class:</strong> <span id="studentClass">________</span></p>
+        <p><strong>Term:</strong> <span id="studentTerm">________</span></p>
+      </div>
+    </header>
 
+    <section class="input-section">
+      <label>Math: <input type="number" id="math"></label>
+      <label>English: <input type="number" id="english"></label>
+      <label>Physics: <input type="number" id="physics"></label>
+      <label>Chemistry: <input type="number" id="chemistry"></label>
+      <button onclick="generateReport()">Generate Report</button>
+    </section>
 
-<div class="inputs">
-<label>Math: <input type="number" id="math" min="0" max="100"></label>
-<label>English: <input type="number" id="english" min="0" max="100"></label>
-<label>Physics: <input type="number" id="physics" min="0" max="100"></label>
-<label>Chemistry: <input type="number" id="chemistry" min="0" max="100"></label>
-</div>
+    <section class="report-section" id="report"></section>
 
-
-<div class="btn-group">
-<button onclick="generateReport()">Generate Report</button>
-<button onclick="window.print()">Print / Save PDF</button>
-</div>
-
-
-<div id="studentDetails" style="display:none;"></div>
-
-
-<table id="reportTable" style="display:none;">
-<thead>
-<tr>
-<th>Subject</th>
-<th>Score</th>
-<th>Grade</th>
-<th>Remark</th>
-</tr>
-</thead>
-<tbody id="reportBody"></tbody>
-<tfoot>
-<tr class="overall">
-<td colspan="4" id="overall"></td>
-</tr>
-</tfoot>
-</table>
-
-
-<div class="progress-bar" style="display:none;">
-<div class="progress-fill" id="progressFill">0%</div>
-</div>
-
-
-<div class="signature">
-<p>Teacher's Signature</p>
-<div></div>
-</div>
-</div>
-    <script src="script.js"></script>
+    <footer>
+      <p>Date Issued: <span id="dateIssued"></span></p>
+      <p>Teacher’s Signature: ___________________</p>
+      <button onclick="window.print()">Print Report</button>
+    </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
