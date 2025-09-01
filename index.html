@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Report Card</h1>
+<label>Math: <input type="number" id="math" min="0" max="100"></label><br><br>
+<label>English: <input type="number" id="english" min="0" max="100"></label><br><br>
+<label>Physics: <input type="number" id="physics" min="0" max="100"></label><br><br>
+<label>Chemistry: <input type="number" id="chemistry" min="0" max="100"></label><br><br>
+
+
+<button onclick="generateReport()">Generate Report</button>
+
+
+<h3>Subject Results:</h3>
+<div id="report"></div>
+
+
+<h3>Overall Result:</h3>
+<div id="overall"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
