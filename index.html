@@ -6,24 +6,72 @@
     <title>Grade Checker</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Report Card</h1>
-<label>Math: <input type="number" id="math" min="0" max="100"></label><br><br>
-<label>English: <input type="number" id="english" min="0" max="100"></label><br><br>
-<label>Physics: <input type="number" id="physics" min="0" max="100"></label><br><br>
-<label>Chemistry: <input type="number" id="chemistry" min="0" max="100"></label><br><br>
+<body><h2>Student Report Card</h2>
+<div class="student-info">
+<div>
+<label>Name:</label>
+<input type="text" id="studentName">
+</div>
+<div>
+<label>Class:</label>
+<input type="text" id="studentClass">
+</div>
+<div>
+<label>Term:</label>
+<input type="text" id="studentTerm">
+</div>
+<div>
+<label>Date:</label>
+<input type="date" id="studentDate">
+</div>
+</div>
 
 
+<div class="inputs">
+<label>Math: <input type="number" id="math" min="0" max="100"></label>
+<label>English: <input type="number" id="english" min="0" max="100"></label>
+<label>Physics: <input type="number" id="physics" min="0" max="100"></label>
+<label>Chemistry: <input type="number" id="chemistry" min="0" max="100"></label>
+</div>
+
+
+<div class="btn-group">
 <button onclick="generateReport()">Generate Report</button>
+<button onclick="window.print()">Print / Save PDF</button>
+</div>
 
 
-<h3>Subject Results:</h3>
-<div id="report"></div>
+<div id="studentDetails" style="display:none;"></div>
 
 
-<h3>Overall Result:</h3>
-<div id="overall"></div>
+<table id="reportTable" style="display:none;">
+<thead>
+<tr>
+<th>Subject</th>
+<th>Score</th>
+<th>Grade</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody id="reportBody"></tbody>
+<tfoot>
+<tr class="overall">
+<td colspan="4" id="overall"></td>
+</tr>
+</tfoot>
+</table>
 
+
+<div class="progress-bar" style="display:none;">
+<div class="progress-fill" id="progressFill">0%</div>
+</div>
+
+
+<div class="signature">
+<p>Teacher's Signature</p>
+<div></div>
+</div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>

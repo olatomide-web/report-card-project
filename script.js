@@ -1,24 +1,4 @@
 function getGrade(score) {
-if (score >= 70) return { grade: "A", message: "Excellent", color: "green" };
-if (score >= 60) return { grade: "B", message: "Very Good", color: "blue" };
-if (score >= 50) return { grade: "C", message: "Good", color: "orange" };
-if (score >= 40) return { grade: "D", message: "Pass", color: "purple" };
-return { grade: "F", message: "Fail", color: "red" };
-}
-
-
-function generateReport() {
-const subjects = ["math", "english", "physics", "chemistry"];
-let total = 0;
-let reportHTML = "";
-
-
-subjects.forEach(sub => {
-let score = Math.floor(Number(document.getElementById(sub).value));
-let grade, message, color;
-
-
-if (isNaN(score) || score < 0 || score > 100) {
 score = 0;
 grade = "F";
 message = "Fail (Absent/Invalid)";
@@ -28,16 +8,19 @@ color = "red";
 }
 
 
-reportHTML += `<div class="result" style="color:${color};">
-${sub.toUpperCase()}: ${score} → Grade ${grade} - ${message}
-</div>`;
+reportHTML += `<tr style="color:${color};">
+<td>${sub}</td>
+<td>${score}</td>
+<td>${grade}</td>
+<td>${message}</td>
+</tr>`;
 
 
 total += score;
 });
 
 
-document.getElementById("report").innerHTML = reportHTML;
+document.getElementById("reportBody").innerHTML = reportHTML;
 
 
 let average = Math.floor(total / subjects.length);
@@ -45,6 +28,27 @@ let { grade, message, color } = getGrade(average);
 document.getElementById("overall").innerHTML =
 `Overall Average: ${average} → Grade ${grade} - ${message}`;
 document.getElementById("overall").style.color = color;
+
+
+// Progress bar update
+let progressFill = document.getElementById("progressFill");
+let progressBar = document.querySelector(".progress-bar");
+progressBar.style.display = "block";
+progressFill.style.width = average + "%";
+progressFill.textContent = average + "%";
+
+
+// Show student details
+const name = document.getElementById("studentName").value || "N/A";
+const studentClass = document.getElementById("studentClass").value || "N/A";
+const term = document.getElementById("studentTerm").value || "N/A";
+const date = document.getElementById("studentDate").value || "N/A";
+document.getElementById("studentDetails").innerHTML =
+`Name: ${name} | Class: ${studentClass} | Term: ${term} | Date: ${date}`;
+
+
+document.getElementById("studentDetails").style.display = "block";
+document.getElementById("reportTable").style.display = "table";
 }
 
 
