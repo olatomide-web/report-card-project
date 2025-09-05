@@ -47,7 +47,7 @@ document.getElementById("studentClass").addEventListener("change", function() {
       subjectsContainer.innerHTML += `
         <div class="form-group">
           <label>${subject}:</label>
-          <input type="number" id="${subject.toLowerCase().replace(/ /g,'')}" min="0" max="100">
+          <input type="number" id="${subject.toLowerCase().replace(/ /g,'')}" min="0" max="100" required>
         </div>
       `;
     });
@@ -56,11 +56,16 @@ document.getElementById("studentClass").addEventListener("change", function() {
 
 // Generate Report
 function generateReport() {
-  const name = document.getElementById("studentName").value || "N/A";
-  const studentClass = document.getElementById("studentClass").value || "N/A";
-  const term = document.getElementById("studentTerm").value || "N/A";
-  const session = document.getElementById("studentSession").value || "N/A";
+  const name = document.getElementById("studentName").value;
+  const studentClass = document.getElementById("studentClass").value;
+  const term = document.getElementById("studentTerm").value;
+  const session = document.getElementById("studentSession").value;
 
+  
+  if (!name || !studentClass || !term) {
+    alert("Please fill all details.");
+    return;
+  }
   // Date in long style
   const today = new Date();
   const longDate = today.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });

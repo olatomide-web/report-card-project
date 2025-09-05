@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Report Card Project</title>
+  <title>Report Card Generator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,11 +12,7 @@
     <!-- Input Form -->
     <div class="form-section">
       <div class="form-group">
-        <label>Name:</label>
-        <input type="text" id="studentName" required>
-      </div>
-      <div class="form-group">
-        <label>Class:</label>
+        <label><b>Class:</b></label>
         <select id="studentClass" required>
           <option value="">Select Class</option>
           <option value="JSS1">JSS 1</option>
@@ -34,7 +30,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label>Term:</label>
+        <label><b>Term:</b></label>
         <select id="studentTerm" required>
           <option value="">Select Term</option>
           <option value="First Term">First Term</option>
@@ -43,20 +39,23 @@
         </select>
       </div>
       <div class="form-group">
-        <label>Session:</label>
+        <label><b>Session:</b></label>
         <input type="text" id="studentSession" readonly>
+      </div>
+      <div class="form-group">
+        <label><b>Name:</b></label>
+        <input type="text" id="studentName" required>
       </div>
 
       <div id="subjectsContainer"></div>
 
       <button id="generateBtn" onclick="generateReport()">Generate Report</button>
-      <button id="printBtn" onclick="window.print()">Print / Save PDF</button>
     </div>
 
     <!-- Report Card -->
     <div class="report-card" id="reportCard" style="display:none;">
       <div class="report-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Eo_circle_blue_letter-s.svg/1024px-Eo_circle_blue_letter-s.svg.png" alt="School Logo" class="logo">
+        <img src="image/leadcity.png" alt="School Logo" class="logo">
         <h2>Student Report Card</h2>
       </div>
 
@@ -91,16 +90,17 @@
         </tfoot>
       </table>
 
-      <section>
+      <section class="signature-space">
         <div class="signature">
-        <p>Teacher's Signature</p>
+        <h4>Teacher's Signature</h4>
         <div></div>
       </div>
       <div class="signature">
-        <p>Principal's Signature</p>
+        <h4>Principal's Signature</h4>
         <div></div>
       </div>
       </section>
+      <button id="printBtn" onclick="window.print()">Print / Save PDF</button>
       
     </div>
   </div>
