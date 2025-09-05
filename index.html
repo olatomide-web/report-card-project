@@ -2,37 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Report Card</title>
+  <title>Report Card Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="report-card">
-    <header>
-      <h1>Student Report Card</h1>
-      <div class="student-details">
-        <p><strong>Name:</strong> <span id="studentName">________</span></p>
-        <p><strong>Class:</strong> <span id="studentClass">________</span></p>
-        <p><strong>Term:</strong> <span id="studentTerm">________</span></p>
+  <div class="container">
+    <h1>Report Card Generator</h1>
+
+    <!-- Input Form -->
+    <div class="form-section">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" id="studentName" required>
       </div>
-    </header>
+      <div class="form-group">
+        <label>Class:</label>
+        <select id="studentClass" required>
+          <option value="">Select Class</option>
+          <option value="JSS1">JSS 1</option>
+          <option value="JSS2">JSS 2</option>
+          <option value="JSS3">JSS 3</option>
+          <option value="SS1 Science">SS1 Science</option>
+          <option value="SS2 Science">SS2 Science</option>
+          <option value="SS3 Science">SS3 Science</option>
+          <option value="SS1 Art">SS1 Art</option>
+          <option value="SS2 Art">SS2 Art</option>
+          <option value="SS3 Art">SS3 Art</option>
+          <option value="SS1 Commercial">SS1 Commercial</option>
+          <option value="SS2 Commercial">SS2 Commercial</option>
+          <option value="SS3 Commercial">SS3 Commercial</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Term:</label>
+        <select id="studentTerm" required>
+          <option value="">Select Term</option>
+          <option value="First Term">First Term</option>
+          <option value="Second Term">Second Term</option>
+          <option value="Third Term">Third Term</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Session:</label>
+        <input type="text" id="studentSession" readonly>
+      </div>
 
-    <section class="input-section">
-      <label>Math: <input type="number" id="math"></label>
-      <label>English: <input type="number" id="english"></label>
-      <label>Physics: <input type="number" id="physics"></label>
-      <label>Chemistry: <input type="number" id="chemistry"></label>
-      <button onclick="generateReport()">Generate Report</button>
-    </section>
+      <div id="subjectsContainer"></div>
 
-    <section class="report-section" id="report"></section>
+      <button id="generateBtn" onclick="generateReport()">Generate Report</button>
+      <button id="printBtn" onclick="window.print()">Print / Save PDF</button>
+    </div>
 
-    <footer>
-      <p>Date Issued: <span id="dateIssued"></span></p>
-      <p>Teacher’s Signature: ___________________</p>
-      <button onclick="window.print()">Print Report</button>
-    </footer>
+    <!-- Report Card -->
+    <div class="report-card" id="reportCard" style="display:none;">
+      <div class="report-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Eo_circle_blue_letter-s.svg/1024px-Eo_circle_blue_letter-s.svg.png" alt="School Logo" class="logo">
+        <h2>Student Report Card</h2>
+      </div>
+
+      <table class="student-info">
+        <tr>
+          <td><strong>Name:</strong> <span id="infoName"></span></td>
+          <td><strong>Class:</strong> <span id="infoClass"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Term:</strong> <span id="infoTerm"></span></td>
+          <td><strong>Session:</strong> <span id="infoSession"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><strong>Date:</strong> <span id="infoDate"></span></td>
+        </tr>
+      </table>
+
+      <table id="reportTable">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Score</th>
+            <th>Grade</th>
+            <th>Remark</th>
+          </tr>
+        </thead>
+        <tbody id="reportBody"></tbody>
+        <tfoot>
+          <tr class="overall">
+            <td colspan="4" id="overall"></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <section>
+        <div class="signature">
+        <p>Teacher's Signature</p>
+        <div></div>
+      </div>
+      <div class="signature">
+        <p>Principal's Signature</p>
+        <div></div>
+      </div>
+      </section>
+      
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

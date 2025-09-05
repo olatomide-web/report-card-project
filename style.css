@@ -1,182 +1,156 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f3f6fb;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  margin: 0;
+  padding: 0;
 }
 
-.report-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  width: 700px;
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-header {
+h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #222;
 }
 
-.student-details {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+.form-section {
+  margin-bottom: 30px;
 }
 
-.input-section {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.form-group {
+  margin-bottom: 15px;
 }
 
-.input-section label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
+label {
+  font-weight: 600;
 }
 
-.input-section input {
-  padding: 6px;
+input, select {
+  padding: 8px;
+  width: 95%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
 }
 
 button {
-  background: #4cafef;
+  margin: 10px 8px;
+  padding: 12px 25px;
   border: none;
+  border-radius: 10px;
+  background: #007bff;
   color: white;
-  padding: 10px 15px;
-  margin-top: 10px;
-  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
-  background: #3899db;
+  background: #0056b3;
 }
 
-table {
+.report-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.student-info {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-th, td {
+.student-info td {
+  padding: 8px;
   border: 1px solid #ddd;
+}
+
+#reportTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#reportTable th, #reportTable td {
   padding: 12px;
+  border: 1px solid #ddd;
   text-align: center;
 }
 
-th {
-  background: #4cafef;
+#reportTable th {
+  background: #007bff;
   color: white;
 }
 
-tr:nth-child(even) {
+#reportTable tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-footer {
-  margin-top: 20px;
+.overall {
+  font-weight: bold;
+  background: #e9ecef;
+}
+
+.signature {
   text-align: center;
-  font-size: 14px;
+  margin-top: 50px;
 }
 
-
-/* ensure inputs can wrap so buttons don't get pushed out */
-.input-section,
-.inputs {
-  display: flex;
-  flex-wrap: wrap;       /* allow items to move to next line */
-  gap: 12px;             /* spacing between fields */
-  align-items: center;
+.signature div {
+  margin-top: 40px;
+  border-top: 1px solid #000;
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* make each input label behave nicely when wrapping */
-.input-section label,
-.inputs label {
-  flex: 0 1 auto;        /* allow label+input blocks to shrink/wrap */
-  min-width: 140px;      /* keep inputs usable; tweak as needed */
-}
-
-/* button container — keep buttons centered and wrap if needed */
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-
-/* desktop: buttons keep natural size */
-.btn-group button {
-  flex: 0 0 auto;
-  min-width: 140px;
-}
-
-/* small screens: make buttons full width so they never overflow */
-@media (max-width: 480px) {
-  .input-section label,
-  .inputs label {
-    width: 100%;
-    min-width: 0;
+/* Print Styles */
+@media print {
+  body {
+    background: white;
   }
 
-  .btn-group button {
-    flex: 1 1 100%;
-    max-width: none;
+  .form-section,
+  #generateBtn,
+  #printBtn,
+  h1 {
+    display: none !important;
   }
-}
 
+  .container {
+    box-shadow: none;
+    border: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-/* ===== Base styles remain same ===== */
-
-/* Responsive Styles */
-@media (max-width: 768px) {
   .report-card {
-    width: 100%;
-    padding: 15px;
+    border: none;
+    background: white;
+    padding: 0;
+    margin: 0;
   }
 
-  .student-details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+  .report-header {
+    margin-bottom: 10px;
   }
 
-  .input-section {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .input-section label {
-    width: 100%;
-  }
-
-  table, th, td {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 20px;
-  }
-
-  .student-details p {
-    font-size: 14px;
-  }
-
-  table, th, td {
-    font-size: 12px;
+  .report-card h2 {
+    margin-top: 5px;
   }
 }
