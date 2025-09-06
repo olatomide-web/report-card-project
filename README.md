@@ -1,4 +1,4 @@
-#🎓 Student Report Card Generator
+# 🎓 Student Report Card Generator
 
 This project is a simple **web-based report card system** built with **HTML, CSS, and JavaScript**.  
 It allows teachers to input subject scores, calculate grades, and display results in a styled report card format.
