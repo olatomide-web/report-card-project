@@ -5,9 +5,12 @@ It allows teachers to input subject scores, calculate grades, and display result
 
 ---
 # Case Study 
-arrow down emoji from emojiterra.com
+
 <img width="296" height="116" alt="leadcity" src="https://github.com/user-attachments/assets/eb5e7eae-832e-48f1-969e-2bf14de3084b" />
 
+# Preview
+
+[Aborisade Olatomide.pdf](https://github.com/user-attachments/files/22183299/Aborisade.Olatomide.pdf)
 
 ## ✨ Features
 - Input scores for multiple subjects
