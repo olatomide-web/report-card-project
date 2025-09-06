@@ -13,18 +13,24 @@ function getGrade(score) {
 
 // Subjects per Class
 const subjectsByClass = {
-  "JSS1": ["Math", "English", "Basic Science", "Social Studies"],
-  "JSS2": ["Math", "English", "Basic Science", "Business Studies"],
-  "JSS3": ["Math", "English", "Basic Science", "Agricultural Science"],
-  "SS1 Science": ["Math", "English", "Physics", "Chemistry", "Biology"],
-  "SS2 Science": ["Math", "English", "Physics", "Chemistry", "Biology"],
-  "SS3 Science": ["Math", "English", "Physics", "Chemistry", "Biology"],
-  "SS1 Art": ["Math", "English", "Government", "Literature", "CRK"],
-  "SS2 Art": ["Math", "English", "Government", "Literature", "CRK"],
-  "SS3 Art": ["Math", "English", "Government", "Literature", "CRK"],
-  "SS1 Commercial": ["Math", "English", "Economics", "Commerce", "Accounting"],
-  "SS2 Commercial": ["Math", "English", "Economics", "Commerce", "Accounting"],
-  "SS3 Commercial": ["Math", "English", "Economics", "Commerce", "Accounting"]
+  "JSS1": ["Math", "English", "Basic Science", "Civic Education", "Cultural & Creative Arts (CCA)", "Physical & Health Education (PHE)","Computer Studies / ICT", "Religious Studies(CRK/IRK)", "Agricultural Science", "French", "Home Economics", "Basic Technology"],
+  "JSS2": ["Math", "English", "Basic Science", "Civic Education", "Cultural & Creative Arts (CCA)", "Physical & Health Education (PHE)","Computer Studies / ICT", "Religious Studies(CRK/IRK)", "Agricultural Science", "French", "Home Economics", "Basic Technology"],
+  "JSS3": ["Math", "English", "Basic Science", "Civic Education", "Cultural & Creative Arts (CCA)", "Physical & Health Education (PHE)","Computer Studies / ICT", "Religious Studies(CRK/IRK)", "Agricultural Science", "French", "Home Economics", "Basic Technology"],
+
+
+  "SS1 Science": ["Math", "English", "Physics", "Chemistry", "Biology", "Civic Education", "Economics", "Agricultural Science", "Yoruba"],
+  "SS2 Science": ["Math", "English", "Physics", "Chemistry", "Biology", "Civic Education", "Economics", "Agricultural Science", "Yoruba"],
+  "SS3 Science": ["Math", "English", "Physics", "Chemistry", "Biology", "Civic Education", "Economics", "Agricultural Science", "Yoruba"],
+  
+
+  "SS1 Art": ["Math", "English", "Government", "Literature", "CRK/IRK", "Government", "Geography", "History", "Civic Education"],
+  "SS2 Art": ["Math", "English", "Government", "Literature", "CRK/IRK", "Government", "Geography", "History", "Civic Education"],
+  "SS3 Art": ["Math", "English", "Government", "Literature", "CRK/IRK", "Government", "Geography", "History", "Civic Education"],
+  
+  "SS1 Commercial": ["Math", "English", "Economics", "Commerce", "Accounting", "Book keeping", "Marketing", "ICT", "Entrepreneurship"],
+  "SS2 Commercial": ["Math", "English", "Economics", "Commerce", "Accounting", "Book keeping", "Marketing", "ICT", "Entrepreneurship"],
+  "SS3 Commercial": ["Math", "English", "Economics", "Commerce", "Accounting", "Book keeping", "Marketing", "ICT", "Entrepreneurship"],
+
 };
 
 // Auto-fill session
@@ -86,8 +92,8 @@ function generateReport() {
     if (isNaN(score) || score < 0 || score > 100) score = 0;
 
     const { grade, remark, color } = getGrade(score);
-    reportHTML += `<tr style="color:${color};">
-      <td>${subject}</td>
+    reportHTML += `<tr style="color:red">
+      <td style="text-align: left;">${subject}</td>
       <td>${score}</td>
       <td>${grade}</td>
       <td>${remark}</td>

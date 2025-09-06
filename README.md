@@ -1,14 +1,14 @@
-# 🎓 Student Report Card (Grade Checker)
+#🎓 Student Report Card Generator
 
 This project is a simple **web-based report card system** built with **HTML, CSS, and JavaScript**.  
-It allows students (or teachers) to input subject scores, calculate grades, and display results in a styled report card format.
+It allows teachers to input subject scores, calculate grades, and display results in a styled report card format.
 
 ---
 
 ## ✨ Features
 - Input scores for multiple subjects
 - Automatic calculation of:
-  - **Grades (A–F)**
+  - **Grades (A1–F9)**
   - **Remarks (Excellent, Good, Fair, Poor, Fail)**
   - **Overall average**
 - Handles invalid inputs (below 0 or above 100)

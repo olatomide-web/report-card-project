@@ -105,7 +105,7 @@ button:hover {
 }
 
 #reportTable th {
-  background: #007bff;
+  background: #EE1583;
   color: white;
 }
 
@@ -173,11 +173,11 @@ button:hover {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 200px;
+  height: 140px;
 }
 #subjectsContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: flex;             /* enables flexbox */
+  flex-wrap: wrap;           /* allows items to go to next line if needed */
+  justify-content:space-evenly; /* horizontal spacing */
+  align-items: center;       /* vertical alignment */       
 }
