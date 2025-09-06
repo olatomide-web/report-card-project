@@ -92,7 +92,7 @@ function generateReport() {
     if (isNaN(score) || score < 0 || score > 100) score = 0;
 
     const { grade, remark, color } = getGrade(score);
-    reportHTML += `<tr style="color:red">
+    reportHTML += `<tr style="color:${color}">
       <td style="text-align: left;">${subject}</td>
       <td>${score}</td>
       <td>${grade}</td>
