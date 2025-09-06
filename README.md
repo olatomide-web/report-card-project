@@ -1,4 +1,5 @@
 # 🎓 Student Report Card Generator
+[Aborisade Olatomide.pdf](https://github.com/user-attachments/files/22183279/Aborisade.Olatomide.pdf)
 
 This project is a simple **web-based report card system** built with **HTML, CSS, and JavaScript**.  
 It allows teachers to input subject scores, calculate grades, and display results in a styled report card format.
